@@ -1,0 +1,145 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/maps/MapEditor.gd" id="1_script"]
+
+[node name="MapEditor" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="BGLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BGColorRect" type="ColorRect" parent="BGLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.12, 0.12, 0.12, 1)
+
+[node name="BGTextureRect" type="TextureRect" parent="BGLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch_mode = 1
+
+[node name="SpawnContainer" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 120.0
+grow_horizontal = 2
+mouse_filter = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 0.8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopRow" type="HBoxContainer" parent="CanvasLayer/UI/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="WallButton" type="Button" parent="CanvasLayer/UI/VBoxContainer/TopRow"]
+layout_mode = 2
+text = "Wall Brush"
+
+[node name="SpawnButton" type="Button" parent="CanvasLayer/UI/VBoxContainer/TopRow"]
+layout_mode = 2
+text = "Spawn Brush"
+
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/UI/VBoxContainer/TopRow"]
+layout_mode = 2
+
+[node name="ShapeSquare" type="Button" parent="CanvasLayer/UI/VBoxContainer/TopRow"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+tooltip_text = "Square"
+
+[node name="ShapeTL" type="Button" parent="CanvasLayer/UI/VBoxContainer/TopRow"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+tooltip_text = "Triangle Top-Left"
+
+[node name="ShapeTR" type="Button" parent="CanvasLayer/UI/VBoxContainer/TopRow"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+tooltip_text = "Triangle Top-Right"
+
+[node name="ShapeBL" type="Button" parent="CanvasLayer/UI/VBoxContainer/TopRow"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+tooltip_text = "Triangle Bottom-Left"
+
+[node name="ShapeBR" type="Button" parent="CanvasLayer/UI/VBoxContainer/TopRow"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+tooltip_text = "Triangle Bottom-Right"
+
+[node name="VSeparator2" type="VSeparator" parent="CanvasLayer/UI/VBoxContainer/TopRow"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="CanvasLayer/UI/VBoxContainer/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BGColorPicker" type="ColorPickerButton" parent="CanvasLayer/UI/VBoxContainer/TopRow"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/VBoxContainer/TopRow"]
+layout_mode = 2
+text = "Background"
+
+[node name="CustomBGBtn" type="Button" parent="CanvasLayer/UI/VBoxContainer/TopRow"]
+layout_mode = 2
+text = "Set Custom BG"
+
+[node name="Spacer2" type="Control" parent="CanvasLayer/UI/VBoxContainer/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SaveExitButton" type="Button" parent="CanvasLayer/UI/VBoxContainer/TopRow"]
+layout_mode = 2
+text = "Save & Exit"
+
+[node name="BottomRow" type="HBoxContainer" parent="CanvasLayer/UI/VBoxContainer"]
+layout_mode = 2
+
+[node name="PaletteContainer" type="GridContainer" parent="CanvasLayer/UI/VBoxContainer/BottomRow"]
+layout_mode = 2
+columns = 20
+
+[node name="FileDialog" type="FileDialog" parent="CanvasLayer"]
+title = "Open a File"
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.png, *.jpg, *.jpeg ; Images")
+use_native_dialog = true

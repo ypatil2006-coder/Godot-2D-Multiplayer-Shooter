@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://enemy_bot_scene"]
+
+[ext_resource type="Script" path="res://scripts/enemies/EnemyBot.gd" id="1_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bot"]
+size = Vector2(24, 24)
+
+[node name="EnemyBot" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_script")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 12.0
+offset_bottom = 12.0
+color = Color(0.2, 0.4, 0.8, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bot")
+
+[node name="GunPivot" type="Node2D" parent="."]
+
+[node name="GunRect" type="ColorRect" parent="GunPivot"]
+offset_top = -2.0
+offset_right = 20.0
+offset_bottom = 2.0
+color = Color(0.8, 0.2, 0.2, 1)
+
+[node name="Muzzle" type="Marker2D" parent="GunPivot"]
+position = Vector2(20, 0)
+
+[node name="RayCast2D" type="RayCast2D" parent="GunPivot"]
+position = Vector2(20, 0)
+target_position = Vector2(800, 0)
+collision_mask = 2

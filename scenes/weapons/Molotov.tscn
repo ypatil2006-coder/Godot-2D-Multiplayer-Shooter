@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://molotov_scene"]
+
+[ext_resource type="Script" path="res://scripts/weapons/Molotov.gd" id="1_script"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_molly"]
+friction = 1.0
+bounce = 0.1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_molly"]
+size = Vector2(8, 16)
+
+[node name="Molotov" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 3
+linear_damp = 1.0
+physics_material_override = SubResource("PhysicsMaterial_molly")
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_molly")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+offset_bottom = 8.0
+color = Color(1, 0.4, 0, 1)
+
+[node name="BackupTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true

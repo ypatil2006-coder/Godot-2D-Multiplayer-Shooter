@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/maps/CustomMap.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://c8nqm3dxy45qg" path="res://scenes/player/Player.tscn" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://target_dummy_scene" path="res://scenes/enemies/TargetDummy.tscn" id="2_dummy"]
+[ext_resource type="PackedScene" path="res://scenes/maps/CustomTileMap.tscn" id="3_tilemap"]
+
+[node name="CustomMap" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="CustomTileMap" parent="." instance=ExtResource("3_tilemap")]
+
+[node name="TargetDummy" parent="." instance=ExtResource("2_dummy")]
+position = Vector2(500, 850)
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/player/Player.tscn")
+spawn_path = NodePath("../Players")

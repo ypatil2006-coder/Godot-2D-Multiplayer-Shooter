@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/weapons/ToxicGrenade.gd" id="1_script"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_toxic"]
+friction = 1.0
+bounce = 0.1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x"]
+radius = 8.0
+
+[node name="ToxicGrenade" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 3
+linear_damp = 1.0
+physics_material_override = SubResource("PhysicsMaterial_toxic")
+script = ExtResource("1_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+color = Color(0.2, 0.8, 0.2, 1)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

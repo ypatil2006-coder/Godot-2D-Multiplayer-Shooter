@@ -1,0 +1,164 @@
+[gd_scene load_steps=2 format=3 uid="uid://buy_menu_scene"]
+
+[ext_resource type="Script" path="res://scripts/ui/BuyMenu.gd" id="1_script"]
+
+[node name="BuyMenu" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_script")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="PrimaryTitle" type="Label" parent="ColorRect/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Primary Weapons (Slot 1)"
+horizontal_alignment = 1
+
+[node name="PrimaryBox" type="HBoxContainer" parent="ColorRect/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="AKBox" type="VBoxContainer" parent="ColorRect/CenterContainer/VBoxContainer/PrimaryBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer/PrimaryBox/AKBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "AK"
+horizontal_alignment = 1
+
+[node name="Stats" type="Label" parent="ColorRect/CenterContainer/VBoxContainer/PrimaryBox/AKBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Capacity: 30
+Drop Range: 15 Blocks
+Accuracy: 2 Shots"
+horizontal_alignment = 1
+
+[node name="EquipBtn" type="Button" parent="ColorRect/CenterContainer/VBoxContainer/PrimaryBox/AKBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Equip"
+
+[node name="M4A4Box" type="VBoxContainer" parent="ColorRect/CenterContainer/VBoxContainer/PrimaryBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer/PrimaryBox/M4A4Box"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "M4A4-S"
+horizontal_alignment = 1
+
+[node name="Stats" type="Label" parent="ColorRect/CenterContainer/VBoxContainer/PrimaryBox/M4A4Box"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Capacity: 20
+Drop Range: 20 Blocks
+Accuracy: 7 Shots"
+horizontal_alignment = 1
+
+[node name="EquipBtn" type="Button" parent="ColorRect/CenterContainer/VBoxContainer/PrimaryBox/M4A4Box"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Equip"
+
+[node name="SecondaryTitle" type="Label" parent="ColorRect/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Secondary Weapons (Slot 2)"
+horizontal_alignment = 1
+
+[node name="SecondaryBox" type="HBoxContainer" parent="ColorRect/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="PistolBox" type="VBoxContainer" parent="ColorRect/CenterContainer/VBoxContainer/SecondaryBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer/SecondaryBox/PistolBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "G18"
+horizontal_alignment = 1
+
+[node name="Stats" type="Label" parent="ColorRect/CenterContainer/VBoxContainer/SecondaryBox/PistolBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Capacity: 12
+Drop Range: 5 Blocks
+Accuracy: 6 Shots"
+horizontal_alignment = 1
+
+[node name="EquipBtn" type="Button" parent="ColorRect/CenterContainer/VBoxContainer/SecondaryBox/PistolBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Equip"
+
+[node name="DeagleBox" type="VBoxContainer" parent="ColorRect/CenterContainer/VBoxContainer/SecondaryBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer/SecondaryBox/DeagleBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Deagle"
+horizontal_alignment = 1
+
+[node name="Stats" type="Label" parent="ColorRect/CenterContainer/VBoxContainer/SecondaryBox/DeagleBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Capacity: 7
+Drop Range: Infinite
+Accuracy: Low (Recoil)"
+horizontal_alignment = 1
+
+[node name="EquipBtn" type="Button" parent="ColorRect/CenterContainer/VBoxContainer/SecondaryBox/DeagleBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Equip"
+
+[node name="ShotgunBox" type="VBoxContainer" parent="ColorRect/CenterContainer/VBoxContainer/SecondaryBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer/SecondaryBox/ShotgunBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Sawed-Off"
+horizontal_alignment = 1
+
+[node name="Stats" type="Label" parent="ColorRect/CenterContainer/VBoxContainer/SecondaryBox/ShotgunBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Capacity: 2
+Drop Range: None
+Accuracy: Spread"
+horizontal_alignment = 1
+
+[node name="EquipBtn" type="Button" parent="ColorRect/CenterContainer/VBoxContainer/SecondaryBox/ShotgunBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Equip"
